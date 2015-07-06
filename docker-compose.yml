@@ -1,0 +1,21 @@
+redis:
+  image: redis
+  ports:
+    - 6379:6379
+  command: redis-server --requirepass secret
+
+helpbot:
+  build: .
+  dns: 8.8.8.8
+  links:
+    - redis:redis
+  environment:
+    - SLACKTOKEN=
+    - REDISHOST=redis
+    - REDISPORT=6379
+    - REDISPASSWORD=secret
+    - REDISDB=1
+    - REDISKEY=halpchats
+    - ADMINCHANNEL=
+    - SLACKBOTNAME=BottyBot
+    - ICONEMOJI=":rotating_light:"

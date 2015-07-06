@@ -1,0 +1,6 @@
+*.pyc
+/rtmbot.conf
+env
+.git/*
+doc/*
+rtmbot.conf

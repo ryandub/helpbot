@@ -1,0 +1,16 @@
+DEBUG: False
+SLACK_TOKEN: "SLACKTOKEN"
+default: &DEFAULT
+  admin_channel: ADMINCHANNEL
+  botname: SLACKBOTNAME
+  icon_emoji: ICONEMOJI
+  redis:
+    key: REDISKEY
+    host: REDISHOST
+    port: REDISPORT
+    password: REDISPASSWORD
+    db: REDISDB
+help: *DEFAULT
+ack: *DEFAULT
+invite: *DEFAULT
+helptimer: *DEFAULT
