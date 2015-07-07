@@ -5,17 +5,17 @@ outputs = []
 
 
 def process_message(data):
-    if data.get('text', '').startswith('!ack'):
+    if data.get('text', '').split(' ')[0] == '!ack':
         admin_channel, botname, icon_emoji = utils.setup_bot(config)
         message_attrs = {'icon_emoji': icon_emoji, 'username': botname}
         channel = data.get('channel')
 
-        # Only allow !invite from admin_channel
+        # Only allow !ack from admin_channel
         admin_channel_id = utils.get_channel_id_by_name(admin_channel,
                                                         slack_client)
         if admin_channel_id not in channel:
             return
-        
+
         acktext = data['text'].split(' ')
         user = data.get('user')
         username = utils.get_user_name(user, slack_client)
