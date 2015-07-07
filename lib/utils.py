@@ -21,6 +21,19 @@ def format_helps(helps):
     return text
 
 
+def format_prs(prs):
+    text = []
+    for pr in prs:
+        pr = json.loads(pr)
+        link = pr.keys()[0]
+        user = pr[link]['user']
+        ts = arrow.get(pr[link]['timestamp'])
+        t = ":warning: @%s needs this PR reviewed: %s - %s" % (user, link,
+                                                               ts.humanize())
+        text.append(t)
+    return text
+
+
 def get_channels(slack_client):
     return json.loads(slack_client.api_call('channels.list'))
 
