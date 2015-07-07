@@ -1,5 +1,7 @@
 helpbot
 =============
+[![Requirements Status](https://requires.io/github/ryandub/helpbot/requirements.svg?branch=master)](https://requires.io/github/ryandub/helpbot/requirements/?branch=master)
+
 This project is based on [python-rtmbot](https://github.com/slackhq/python-rtmbot), a Slack bot written in python that connects via the RTM API. The documentation included is straigt from `rtmbot`.
 
 Python-rtmbot
