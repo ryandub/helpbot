@@ -26,7 +26,6 @@ def get_channels(slack_client):
 
 
 def get_channel_id_by_name(channel, slack_client):
-    match = None
     groups = get_groups(slack_client)
     match = _extract_id(channel, groups.get('groups', []))
     if not match:
