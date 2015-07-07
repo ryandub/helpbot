@@ -4,7 +4,7 @@ default: &DEFAULT
   admin_channel: ADMINCHANNEL
   botname: SLACKBOTNAME
   icon_emoji: ICONEMOJI
-  redis:
+  redis: &REDIS
     key: REDISKEY
     host: REDISHOST
     port: REDISPORT
@@ -14,3 +14,18 @@ help: *DEFAULT
 ack: *DEFAULT
 invite: *DEFAULT
 helptimer: *DEFAULT
+pr:
+  <<: *DEFAULT
+  redis:
+    <<: *REDIS
+    key: prs
+prack:
+  <<: *DEFAULT
+  redis:
+    <<: *REDIS
+    key: prs
+prtimer:
+  <<: *DEFAULT
+  redis:
+    <<: *REDIS
+    key: prs
