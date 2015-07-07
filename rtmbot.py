@@ -61,7 +61,6 @@ class RtmBot(object):
                     if limiter == True:
                         time.sleep(.1)
                         limiter = False
-	            print(output)
                     message = output[1].encode('ascii','ignore')
                     if len(output) > 2:
                         message_attrs = output[2]
