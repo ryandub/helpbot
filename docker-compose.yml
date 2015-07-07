@@ -10,12 +10,12 @@ helpbot:
   links:
     - redis:redis
   environment:
-    - SLACKTOKEN=
+    - SLACKTOKEN
     - REDISHOST=redis
     - REDISPORT=6379
     - REDISPASSWORD=secret
     - REDISDB=1
     - REDISKEY=halpchats
-    - ADMINCHANNEL=
+    - ADMINCHANNEL
     - SLACKBOTNAME=BottyBot
     - ICONEMOJI=":rotating_light:"
