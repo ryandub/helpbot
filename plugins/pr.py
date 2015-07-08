@@ -27,7 +27,7 @@ def process_message(data):
             link = text[1]
         else:
             text = ("%s - to request PR help, type "
-                    "`!pull-request <link-to-pr>`" % username)
+                    "`!pr <link-to-pr>`" % username)
             outputs.append([channel, text, message_attrs])
             return
 
