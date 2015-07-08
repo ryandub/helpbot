@@ -4,7 +4,7 @@ from lib import utils
 
 outputs = []
 crontable = []
-crontable.append([30, "prtimer"])
+crontable.append([300, "prtimer"])
 
 
 def prtimer():
