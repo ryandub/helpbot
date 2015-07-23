@@ -39,7 +39,11 @@ def process_message(data):
             outputs.append([channel, text, message_attrs])
             return
         halps = helps.Helps(config['redis'])
-        halps.ack(ack_channel)
+        count = halps.ack_help(ack_channel, username)
         text = ":angel: %s has acknowledged help for %s!" % (username,
                                                              ack_channel)
+
+        if count is not None and count > 0.0:
+            text = text +  " %s has acknowledged %d requests for help since tracking began." % (username, count)
+
         outputs.append([channel, text, message_attrs])
