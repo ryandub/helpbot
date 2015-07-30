@@ -28,7 +28,10 @@ def process_message(data):
             return
 
         prs = helps.Helps(config['redis'])
-        prs.ack(ack_pr)
+        count = prs.ack_pr(ack_pr, username)
         text = ":angel: %s has acknowledged PR review for %s!" % (username,
                                                                   ack_pr)
+        if count is not None and count > 0.0:
+            text = text +  " %s has acknowledged %d PRs since tracking began." % (username, count)
+
         outputs.append([channel, text, message_attrs])
