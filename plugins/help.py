@@ -5,7 +5,7 @@ outputs = []
 
 
 def process_message(data):
-    if data.get('text', '').split(' ')[0] == '!help':
+    if data.get('text', '').split()[0] == '!help':
         admin_channel, botname, icon_emoji = utils.setup_bot(config)
         message_attrs = {'icon_emoji': icon_emoji, 'username': botname}
 

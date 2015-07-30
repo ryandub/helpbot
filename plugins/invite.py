@@ -4,8 +4,8 @@ outputs = []
 
 
 def process_message(data):
-    if data.get('text', '').split(' ')[0] == '!invite':
-        text = data.get('text').split(' ')
+    if data.get('text', '').split()[0] == '!invite':
+        text = data.get('text').split()
         channel = data.get('channel')
 
         # Setup plugin

@@ -5,7 +5,7 @@ outputs = []
 
 
 def process_message(data):
-    if data.get('text', '').split(' ')[0] == ('!pr'):
+    if data.get('text', '').split()[0] == ('!pr'):
         admin_channel, botname, icon_emoji = utils.setup_bot(config)
         message_attrs = {'icon_emoji': icon_emoji, 'username': botname}
 
@@ -22,7 +22,7 @@ def process_message(data):
         user = data.get('user')
         username = utils.get_user_name(user, slack_client)
 
-        text = data.get('text').split(' ')
+        text = data.get('text').split()
         if len(text) > 1:
             link = text[1]
         else:
