@@ -89,3 +89,9 @@ The data within a plugin persists for the life of the rtmbot process. If you nee
 
 ####Todo:
 Some rtm data should be handled upstream, such as channel and user creation. These should create the proper objects on-the-fly.
+
+####Workarounds
+
+If you need to manually workaround a problem with RackerBot, like inviting yourself or someone else to a customer channel, check out:
+
+https://one.rackspace.com/display/GDP/RackerBot
